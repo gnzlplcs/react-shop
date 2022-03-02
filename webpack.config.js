@@ -10,10 +10,11 @@ module.exports = { // objeto para añadir la configuración
   resolve: { // extensiones con las que va a trabajar el proyecto
     extensions: ['.js', '.jsx']
   },
+  mode: "development",
   module: { // reglas y plugins
     rules: [
       {
-        text: /\.(js|jsx)$/, // regex para probar los elementos con los que vamos a estar trabajando
+        test: /\.(js|jsx)$/, // regex para probar los elementos con los que vamos a estar trabajando
         exclude: /node_modules/, // excluye lo que no queremos que lea el proyecto
         use: {
           loader: 'babel-loader'
