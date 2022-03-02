@@ -6,7 +6,8 @@ module.exports = { // objeto para añadir la configuración
   entry: './src/index.js', // punto de entrada del proyecto
   output: { // dónde va a vivir nuestro proyecto
     path: path.resolve(__dirname, 'dist'), // crear la carpeta en donde va a vivir nuestro proyecto
-    filename: 'bundle.js' // nombre del empaquetado
+    filename: 'bundle.js', // nombre del empaquetado
+    publicPath: "/"
   },
   resolve: { // extensiones con las que va a trabajar el proyecto
     extensions: ['.js', '.jsx']
@@ -43,10 +44,6 @@ module.exports = { // objeto para añadir la configuración
     })
   ],
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
-    compress: true,
-    port: 9000,
+    historyApiFallback: true,
   },
 }
