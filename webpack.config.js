@@ -1,5 +1,6 @@
 const path = require('path'); // sirve para saber en dónde está nuestro proyecto
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = { // objeto para añadir la configuración
   entry: './src/index.js', // punto de entrada del proyecto
@@ -22,10 +23,17 @@ module.exports = { // objeto para añadir la configuración
       },
       {
         test: /\.html$/, // regex para que trabaje con HTML
+        use:
+        {
+          loader: 'html-loader'
+        }
+      },
+      {
+        test: /\.s[ac]ss$/i,
         use: [
-          {
-            loader: 'html-loader'
-          }
+          'style-loader',
+          'css-loader',
+          'sass-loader'
         ]
       }
     ]
@@ -34,6 +42,16 @@ module.exports = { // objeto para añadir la configuración
     new HtmlWebpackPlugin({ // instanciando el plugin
       template: './public/index.html',
       filename: './index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
     })
-  ]
+  ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 9000,
+  },
 }
