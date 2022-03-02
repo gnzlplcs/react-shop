@@ -17,23 +17,18 @@ module.exports = { // objeto para añadir la configuración
       {
         test: /\.(js|jsx)$/, // regex para probar los elementos con los que vamos a estar trabajando
         exclude: /node_modules/, // excluye lo que no queremos que lea el proyecto
-        use: {
-          loader: 'babel-loader'
-        }
+        use: 'babel-loader'
       },
       {
         test: /\.html$/, // regex para que trabaje con HTML
-        use:
-        {
-          loader: 'html-loader'
-        }
+        use: 'html-loader'
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(css|sass|scss)$/,
         use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' }
         ]
       }
     ]
