@@ -23,4 +23,4 @@ const Checkout = () => {
   );
 };
 
-export { Menu };
+export { Checkout };
