@@ -3,7 +3,7 @@ import "@styles/Order.scss";
 
 import flechita from "@icons/flechita.svg";
 
-export const Order = () => {
+const Order = () => {
   return (
     <div className="Order">
       <p>
@@ -15,3 +15,5 @@ export const Order = () => {
     </div>
   );
 };
+
+export { Order };

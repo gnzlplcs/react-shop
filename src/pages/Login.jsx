@@ -3,17 +3,17 @@ import "@styles/Login.scss";
 
 import logoYardSale from "@logos/logo_yard_sale.svg";
 
-export const Login = () => {
+const Login = () => {
   const form = useRef(null); // no se inicializa con ningún elemento
 
   const handleSubmit = (e) => {
-		e.preventDefault();
+    e.preventDefault();
     const formData = new FormData(form.current);
     const data = {
       username: formData.get("email"),
       password: formData.get("password"),
     };
-		console.log(data);
+    console.log(data);
   };
 
   return (
@@ -42,18 +42,16 @@ export const Login = () => {
           <button
             type="submit"
             className="primary-button login-button"
-						onClick={handleSubmit}
+            onClick={handleSubmit}
           >
-						Log in
-					</button>
+            Log in
+          </button>
           <a href="/">Forgot my password</a>
         </form>
-        <button
-          className="secondary-button signup-button"
-        >
-          Sign up
-        </button>
+        <button className="secondary-button signup-button">Sign up</button>
       </div>
     </div>
   );
 };
+
+export { Login };

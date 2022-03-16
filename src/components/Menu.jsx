@@ -1,7 +1,7 @@
 import React from "react";
 import "@styles/Menu.scss";
 
-export const Menu = () => {
+const Menu = () => {
   return (
     <div className="Menu">
       <ul>
@@ -20,3 +20,5 @@ export const Menu = () => {
     </div>
   );
 };
+
+export { Menu };

@@ -1,16 +1,18 @@
-import React from 'react';
-import { ProductInfo } from '@components/ProductInfo';
-import '@styles/ProductDetail.scss';
+import React from "react";
+import { ProductInfo } from "@components/ProductInfo";
+import "@styles/ProductDetail.scss";
 
-import iconClose from '@icons/icon_close.png';
+import iconClose from "@icons/icon_close.png";
 
-export const ProductDetail = () => {
-	return (
-		<aside className="ProductDetail">
-			<div className="ProductDetail-close">
-				<img src={iconClose} alt="close" />
-			</div>
-			<ProductInfo />
-		</aside>
-	);
-}
+const ProductDetail = () => {
+  return (
+    <aside className="ProductDetail">
+      <div className="ProductDetail-close">
+        <img src={iconClose} alt="close" />
+      </div>
+      <ProductInfo />
+    </aside>
+  );
+};
+
+export { ProductDetail };
