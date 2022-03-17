@@ -14,7 +14,7 @@ const useInitialState = () => {
     });
   };
 
-  return state, addToCart;
+  return { state, addToCart };
 };
 
 export { useInitialState };
