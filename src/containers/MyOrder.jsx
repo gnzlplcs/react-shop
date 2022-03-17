@@ -12,7 +12,7 @@ const MyOrder = () => {
     const reducer = (acc, val) => acc + val.price;
     const sum = state.cart.reduce(reducer, 0);
     return sum;
-  }
+  };
 
   return (
     <aside className="MyOrder">
@@ -21,7 +21,7 @@ const MyOrder = () => {
         <p className="title">My order</p>
       </div>
       <div className="my-order-content">
-        {state.cart.map(product => (
+        {state.cart.map((product, index) => (
           <OrderItem product={product} key={`orderItem-${product.id}`} />
         ))}
         <div className="order">
